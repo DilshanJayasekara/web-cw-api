@@ -2,7 +2,6 @@ const express = require("express");
 const Product = require("../models/product");
 const router = express.Router();
 
-<<<<<<< HEAD
 //add a new product
 router.post("/", async (req, res) => {
   if (
@@ -30,11 +29,6 @@ router.post("/", async (req, res) => {
     return res.status(500).send(err.message);
   }
 });
-
-=======
->>>>>>> master
-
-
 
 
 //update a product upeksha
@@ -74,4 +68,27 @@ router.delete("/:id", async (req, res) => {
     } catch (err) {
       return res.status(500).send(err.message);
     }
+});
+
+//get all the product  : Dileesha
+router.get("/", async (req, res) => {
+  try {
+    let products = await Product.find();
+    return res.send(products);
+  } catch (ex) {
+    return res.status(500).send(ex.message);
+  }
+});
+
+//get a one product with id : Dileesha
+router.get("/:id", async (req, res) => {
+  try {
+    let product = await Cloth.findById(req.params.id);
+    if (!product) {
+      return res.status(404).send("The cloth you request does not exist");
+    }
+    return res.send(product);
+  } catch (ex) {
+    return res.status(500).send(ex.message);
+  }
 });
