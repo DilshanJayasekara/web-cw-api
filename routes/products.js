@@ -2,7 +2,6 @@ const express = require("express");
 const Product = require("../models/product");
 const router = express.Router();
 
-<<<<<<< HEAD
 //add a new product
 router.post("/", async (req, res) => {
   if (
@@ -30,11 +29,6 @@ router.post("/", async (req, res) => {
     return res.status(500).send(err.message);
   }
 });
-
-=======
->>>>>>> master
-
-
 
 
 //update a product upeksha
