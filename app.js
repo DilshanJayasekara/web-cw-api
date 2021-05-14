@@ -7,7 +7,6 @@ const home = require("./routes/home");
 const users = require("./routes/users");
 const auth = require("./routes/auth");
 const carts = require("./routes/carts");
-const cors = require("cors");
 const swaggerUI = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
 
