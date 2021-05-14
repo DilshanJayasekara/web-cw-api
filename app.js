@@ -7,7 +7,14 @@ const home = require("./routes/home");
 const users = require("./routes/users");
 const auth = require("./routes/auth");
 const carts = require("./routes/carts");
+const cors = require("cors");
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
+
+
 const address = require("./routes/addreses");
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
 mongoose
   .connect("mongodb://localhost/webcwdb", {
     useNewUrlParser: true,
@@ -19,8 +26,41 @@ mongoose
   );
 
 const app = express();
+const specs = swaggerJsDoc(options);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 051a57a1324261130a970a3e0ee555ca97023ec9
 const PORT = 5000;
 
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: " Express API with Swagger",
+      version: "0.1.0",
+      description:
+        "This is a simple CRUD API application made with Express and documented with Swagger",
+     
+      contact: {
+        name: "Group 16",
+        email: "upekshad123@gmail.com",
+      },
+    },
+    servers: [
+      {
+        url: "http://localhost:5000/books",
+      },
+    ],
+  },
+  apis: ["./routes/product.js"],
+};
+
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 051a57a1324261130a970a3e0ee555ca97023ec9
 app.use(cors());
 app.use(express.json()); // uses a express inbuilt middleware to parse JSON
 app.use("/", home);
@@ -28,7 +68,19 @@ app.use("/api/products", products);
 app.use("/api/users", users);
 app.use("/api/auth", auth);
 app.use("/api/carts", carts);
+app.use(
+  "/api/products",
+  swaggerUI.serve,
+  swaggerUI.setup(specs, { explorer: true })
+);
+
 app.use("/api/address", address);
+app.use(
+  "/api/products",
+  swaggerUI.serve,
+  swaggerUI.setup(specs, { explorer: true })
+);
+
 //listed to port
 app.listen(PORT, () => {
   console.log("Starting listening on port " + PORT);
