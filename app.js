@@ -7,7 +7,7 @@ const home = require("./routes/home");
 const users = require("./routes/users");
 const auth = require("./routes/auth");
 const carts = require("./routes/carts");
-
+const address = require("./routes/addreses");
 mongoose
   .connect("mongodb://localhost/webcwdb", {
     useNewUrlParser: true,
@@ -28,6 +28,7 @@ app.use("/api/products", products);
 app.use("/api/users", users);
 app.use("/api/auth", auth);
 app.use("/api/carts", carts);
+app.use("/api/address", address);
 //listed to port
 app.listen(PORT, () => {
   console.log("Starting listening on port " + PORT);
