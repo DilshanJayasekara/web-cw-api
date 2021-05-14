@@ -21,7 +21,6 @@ mongoose
   );
 
 const app = express();
-const specs = swaggerJsDoc(options);
 const PORT = 5000;
 
 const options = {
@@ -46,7 +45,7 @@ const options = {
   },
   apis: ["./routes/product.js"],
 };
-
+const specs = swaggerJsDoc(options);
 app.use(cors());
 app.use(express.json()); // uses a express inbuilt middleware to parse JSON
 app.use("/", home);
