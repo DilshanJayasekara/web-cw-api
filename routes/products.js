@@ -111,6 +111,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
 // Add a new product
 /**
  * @swagger
@@ -189,6 +190,7 @@ router.post("/", async (req, res) => {
  *       404:
  *         description: Product not found
  */
+
 
 //update a product upeksha
 router.put("/:id", async (req, res) => {

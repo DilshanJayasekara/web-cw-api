@@ -1,17 +1,13 @@
 {
   "name": "webstoreapi",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": [
-    "Dilshan",
-    "Upeksha",
-    "Minidu",
-    "Dileesha"
-  ],
+  "author": 
+    "Dilshan,Upeksha,Minidu,Dileesha",
+    
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -22,6 +18,19 @@
     "express-session": "^1.17.1",
     "google-auth-library": "^7.0.4",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.7",
+    "swagger-jsdoc": "^7.0.0-rc.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DilshanJayasekara/web-cw-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DilshanJayasekara/web-cw-api/issues"
+  },
+  "homepage": "https://github.com/DilshanJayasekara/web-cw-api#readme",
+  "description": "",
     "mongoose": "^5.12.7"
   }
-}
+
