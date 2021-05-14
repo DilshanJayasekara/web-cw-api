@@ -92,3 +92,4 @@ router.get("/:id", async (req, res) => {
     return res.status(500).send(ex.message);
   }
 });
+module.exports = router;

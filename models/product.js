@@ -12,7 +12,8 @@ const productSchema = new mongoose.Schema({
   imagePath: {
     type: String,
     required: true,
-    default: "https://static.zajo.net/content/mediagallery/zajo_dcat/image/product/types/X/9088.png",
+    default:
+      "https://static.zajo.net/content/mediagallery/zajo_dcat/image/product/types/X/9088.png",
   },
   description: {
     type: String,
