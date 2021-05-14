@@ -192,7 +192,7 @@ router.post("/", async (req, res) => {
  */
 
 
-//update a product upeksha
+//update a product 
 router.put("/:id", async (req, res) => {
   console.log(req.body.imagePath);
   let requestedID = req.params.id;
