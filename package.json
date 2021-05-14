@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": 
+    "Dilshan,Upeksha,Minidu,Dileesha",
+    
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -28,5 +30,7 @@
     "url": "https://github.com/DilshanJayasekara/web-cw-api/issues"
   },
   "homepage": "https://github.com/DilshanJayasekara/web-cw-api#readme",
-  "description": ""
-}
+  "description": "",
+    "mongoose": "^5.12.7"
+  }
+

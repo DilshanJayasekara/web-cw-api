@@ -12,6 +12,7 @@ const swaggerUI = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
 
 
+const address = require("./routes/addreses");
 mongoose
   .connect("mongodb://localhost/webcwdb", {
     useNewUrlParser: true,
@@ -65,6 +66,7 @@ app.use(
   swaggerUI.setup(specs, { explorer: true })
 );
 
+app.use("/api/address", address);
 //listed to port
 app.listen(PORT, () => {
   console.log("Starting listening on port " + PORT);
