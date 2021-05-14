@@ -43,3 +43,25 @@ router.get("/items/:id", async (req, res) => {
     return res.status(500).send({message : ex.message});
   }
 });
+//delete
+router.post("/:id/:user", async (req, res) => {
+  console.log(req.params.user, req.params.id);
+  let cart = await Cart.findOne({ user: req.params.user });
+  //{ $pull: { results: { score: 8 , item: "B" } } }
+  try {
+    cart = await Cart.findOneAndUpdate(
+      { user: req.params.user },
+      { $pull: { items: { _id: req.params.id } } }
+    );
+    cart.items.pull({ _id: req.params.id });
+    console.log(cart);
+    if (!cart)
+      return res
+        .status(404)
+        .send("The Product you request to delete does not exist in DB");
+    return res.send(cart);
+  } catch (err) {
+    return res.status(500).send(err.message);
+  }
+});
+module.exports = router;
