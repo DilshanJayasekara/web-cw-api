@@ -10,12 +10,13 @@ const API_KEY = process.env.API_KEY;
 
 router.post("/", async (req, res) => {
   try {
-    if (req.body.username || !req.body.email || !req.body.password) {
+    console.log(req.body.email);
+    if (!req.body.username || !req.body.email || !req.body.password) {
       return res
         .status(400)
         .send({ message: "Please make sure to enter all field" });
     } else {
-      await User.findOne({ email }).exec(async (err, user) => {
+      await User.findOne({ email : req.body.email}).exec(async (err, user) => {
         if (err) {
           return res.status(400).json({
             error: "Something went wrong..!",
